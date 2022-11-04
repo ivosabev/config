@@ -1,3 +1,5 @@
+const prettierrc = require('./.prettierrc');
+
 const a11yOff = Object.keys(require('eslint-plugin-jsx-a11y').rules).reduce((acc, rule) => {
   acc[`jsx-a11y/${rule}`] = 'off';
   return acc;
@@ -48,27 +50,7 @@ module.exports = {
     'no-unused-vars': 0,
     'no-use-before-define': 'off',
     'object-curly-spacing': ['error', 'never'],
-    'prettier/prettier': [
-      'error',
-      {
-        arrowParens: 'always',
-        bracketSpacing: false,
-        embeddedLanguageFormatting: 'auto',
-        endOfLine: 'lf',
-        htmlWhitespaceSensitivity: 'css',
-        insertPragma: false,
-        jsxSingleQuote: false,
-        printWidth: 140,
-        proseWrap: 'preserve',
-        quoteProps: 'as-needed',
-        requirePragma: false,
-        semi: true,
-        singleQuote: true,
-        tabWidth: 2,
-        trailingComma: 'all',
-        useTabs: false,
-      },
-    ],
+    'prettier/prettier': ['error', prettierrc],
     quotes: ['error', 'single', {allowTemplateLiterals: true}],
     'react-hooks/exhaustive-deps': 'warn',
     'react/function-component-definition': 'off',
