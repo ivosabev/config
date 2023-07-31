@@ -1,12 +1,7 @@
 {
-  "include": [
-    "**/*",
-    "**/.*"
-  ],
+  "include": ["**/*", "**/.*"],
   "compilerOptions": {
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     // What should we export the code as?
     "target": "ES5",
     // What types of modules should we use?
