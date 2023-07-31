@@ -13,8 +13,10 @@
   ],
   "main": "index.js",
   "files": [
+    "eslintrc.js",
     "index.js",
-    "prettier.js"
+    "prettier.js",
+    "typescript.js"
   ],
   "repository": {
     "type": "git",
