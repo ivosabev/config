@@ -1,6 +1,6 @@
 {
   "name": "@ivosabev/eslint-config-ivolution",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Reusable ESLint + Prettier Configuration",
   "keywords": [
     "javascript",
@@ -12,12 +12,6 @@
     "prettier"
   ],
   "main": "index.js",
-  "files": [
-    "eslintrc.js",
-    "index.js",
-    "prettier.js",
-    "typescript.js"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivosabev/eslint-config-ivolution.git"
