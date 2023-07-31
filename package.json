@@ -12,6 +12,10 @@
     "prettier"
   ],
   "main": "index.js",
+  "files": [
+    "index.js",
+    "prettier.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivosabev/eslint-config-ivolution.git"
@@ -28,6 +32,7 @@
     "@typescript-eslint/parser": "5.42.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-sort-keys-fix": "1.1.2"
+    "prettier": "3.x",
   },
   "dependencies": {
     "@remix-run/eslint-config": "1.19.1",
