@@ -1,6 +1,6 @@
 {
   "name": "@ivosabev/eslint-config-ivolution",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Reusable ESLint + Prettier Configuration",
   "keywords": [
     "javascript",
