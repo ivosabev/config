@@ -20,9 +20,6 @@ module.exports = {
       plugins: ['react', 'react-hooks', 'prettier', 'sort-destructure-keys', 'sort-keys-fix'],
     },
     {
-      env: {
-        'cypress/globals': true,
-      },
       extends: [
         '@remix-run/eslint-config',
         '@remix-run/eslint-config/node',
@@ -39,7 +36,7 @@ module.exports = {
       parserOptions: {
         project: './tsconfig.json',
       },
-      plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier', 'sort-destructure-keys', 'sort-keys-fix', 'cypress'],
+      plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier', 'sort-destructure-keys', 'sort-keys-fix'],
       rules: {
         ...a11yOff,
         '@typescript-eslint/await-thenable': 'error',
