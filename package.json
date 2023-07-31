@@ -1,6 +1,6 @@
 {
   "name": "@ivosabev/eslint-config-ivolution",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Reusable ESLint + Prettier Configuration",
   "keywords": [
     "javascript",
@@ -23,12 +23,14 @@
   },
   "homepage": "https://github.com/ivosabev/eslint-config-ivolution#readme",
   "peerDependencies": {
+    "@remix-run/eslint-config": "1.19.1",
     "@typescript-eslint/eslint-plugin": "5.42.0",
     "@typescript-eslint/parser": "5.42.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-sort-keys-fix": "1.1.2"
   },
   "dependencies": {
+    "@remix-run/eslint-config": "1.19.1",
     "@typescript-eslint/eslint-plugin": "5.42.0",
     "@typescript-eslint/parser": "5.42.0",
     "eslint": "8.46.0",
