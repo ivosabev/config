@@ -5,7 +5,7 @@ module.exports = {
   rules: {
     'comma-dangle': ['warn', 'always-multiline'],
     'import/extensions': 'off',
-    'import/no-internal-modules': ['error', {allow: ['*/*', '~/**']}],
+    'import/no-internal-modules': ['error', {allow: ['*/*', '~/**', '#*/**']}],
     'import/prefer-default-export': 'off',
     'max-len': [
       'error',
