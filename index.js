@@ -5,7 +5,14 @@ module.exports = {
   rules: {
     'comma-dangle': ['warn', 'always-multiline'],
     'import/extensions': 'off',
+    'import/no-duplicates': ['error'],
     'import/no-internal-modules': ['error', {allow: ['*/*', '[~#@]*/**']}],
+    'import/order': [
+      'error',
+      {
+        distinctGroup: false,
+      },
+    ],
     'import/prefer-default-export': 'off',
     'max-len': [
       'error',
@@ -46,14 +53,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'sort-destructure-keys/sort-destructure-keys': [2, {caseSensitive: false}],
-    'sort-imports': [
-      'warn',
-      {
-        allowSeparatedGroups: false,
-        ignoreCase: true,
-        ignoreDeclarationSort: true,
-      },
-    ],
     'sort-keys-fix/sort-keys-fix': 'warn',
   },
 };
