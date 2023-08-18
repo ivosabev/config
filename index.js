@@ -10,7 +10,9 @@ module.exports = {
     'import/order': [
       'error',
       {
+        alphabetize: {caseInsensitive: true, order: 'asc'},
         distinctGroup: false,
+        'newlines-between': 'never',
       },
     ],
     'import/prefer-default-export': 'off',
