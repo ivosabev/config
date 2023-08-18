@@ -1,6 +1,6 @@
 {
   "name": "@ivosabev/eslint-config",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Reusable ESLint + Prettier Configuration",
   "keywords": [
     "javascript",
