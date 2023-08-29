@@ -1,6 +1,14 @@
 /** @type {import('@types/eslint').Linter.BaseConfig} */
 module.exports = {
   extends: ['@remix-run/eslint-config', 'prettier', 'plugin:import/recommended'],
+  overrides: [
+    {
+      files: ['**/*.ts?(x)'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'warn',
+      },
+    },
+  ],
   plugins: ['prettier', 'sort-destructure-keys', 'sort-keys-fix'],
   rules: {
     'comma-dangle': ['warn', 'always-multiline'],
