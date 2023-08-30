@@ -37,7 +37,7 @@ module.exports = {
     // TODO: Turn this on when we migrate the window.confirm calls
     'no-case-declarations': 'off',
     'no-console': 'off',
-    'no-else-return': ['error', {allowElseIf: true}],
+    'no-else-return': 'off',
     'no-nested-ternary': 'off',
     'no-return-await': 'off',
     'no-underscore-dangle': 'off',
