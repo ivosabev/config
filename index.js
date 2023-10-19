@@ -63,6 +63,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'sort-destructure-keys/sort-destructure-keys': [2, {caseSensitive: false}],
+    'sort-imports': ['error', {ignoreDeclarationSort: true}],
     'sort-keys-fix/sort-keys-fix': 'warn',
   },
 };
