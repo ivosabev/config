@@ -40,12 +40,12 @@
     }
   },
   "dependencies": {
-    "@remix-run/eslint-config": "2.1.0",
-    "@typescript-eslint/eslint-plugin": "6.9.0",
-    "@typescript-eslint/parser": "6.9.0",
+    "@remix-run/eslint-config": "2.2.0",
+    "@typescript-eslint/eslint-plugin": "6.9.1",
+    "@typescript-eslint/parser": "6.9.1",
     "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-jest": "27.4.3",
-    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-jest": "27.6.0",
+    "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-react": "7.33.2",
