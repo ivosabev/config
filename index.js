@@ -1,5 +1,24 @@
-/** @type {import('@types/eslint').Linter.BaseConfig} */
-module.exports = {
+// Splitting rules into separate modules allow for a lower-level API if our
+// default rules become difficult to extend without lots of duplication.
+const coreRules = require('./rules/core');
+const importRules = require('./rules/import');
+const jsxA11yRules = require('./rules/jsx-a11y');
+const reactRules = require('./rules/react');
+const typescriptRules = require('./rules/typescript');
+const importSettings = require('./settings/import');
+
+/**
+ * @see https://github.com/eslint/eslint/issues/3458
+ * @see https://www.npmjs.com/package/@rushstack/eslint-patch
+ */
+require('@rushstack/eslint-patch/modern-module-resolution');
+
+// const OFF = 0;
+// const WARN = 1;
+// const ERROR = 2;
+
+/** @type {import('eslint').Linter.Config} */
+const config = {
   env: {
     browser: true,
     commonjs: true,
@@ -7,114 +26,51 @@ module.exports = {
   },
   extends: ['eslint:recommended', 'prettier', 'plugin:import/recommended'],
   overrides: [
-    // React
     {
-      extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:react-hooks/recommended', 'plugin:jsx-a11y/recommended'],
-      files: ['**/*.{js,jsx,ts,tsx}'],
-      plugins: ['react', 'jsx-a11y'],
-      settings: {
-        formComponents: ['Form'],
-        linkComponents: [
-          {linkAttribute: 'to', name: 'Link'},
-          {linkAttribute: 'to', name: 'NavLink'},
-        ],
-        react: {
-          version: 'detect',
-        },
-      },
-    },
-    // TypeScript
-    {
-      extends: ['plugin:@typescript-eslint/recommended', 'plugin:import/recommended', 'plugin:import/typescript'],
-      files: ['**/*.{ts,tsx}'],
+      extends: ['plugin:import/typescript', 'plugin:@typescript-eslint/recommended'],
+      files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint', 'import'],
+      parserOptions: {
+        ecmaVersion: 2019,
+        sourceType: 'module',
+      },
+      plugins: ['@typescript-eslint'],
       rules: {
-        '@typescript-eslint/no-unused-vars': 'warn',
-        '@typescript-eslint/return-await': 'error',
+        ...typescriptRules,
       },
-      settings: {
-        'import/internal-regex': '^#/',
-        'import/resolver': {
-          node: {
-            extensions: ['.ts', '.tsx'],
-          },
-          typescript: {
-            alwaysTryTypes: true,
-          },
-        },
-      },
-    },
-    // Node
-    {
-      env: {
-        node: true,
-      },
-      files: ['.eslintrc.js'],
     },
   ],
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+    babelOptions: {
+      presets: [require.resolve('@babel/preset-react')],
     },
     ecmaVersion: 'latest',
+    requireConfigFile: false,
     sourceType: 'module',
   },
-  plugins: ['prettier', 'sort-destructure-keys', 'sort-keys-fix'],
+  plugins: ['prettier', 'import', 'react', 'react-hooks', 'jsx-a11y', 'sort-destructure-keys', 'sort-keys-fix'],
+
+  // NOTE: In general - we want to use prettier for the majority of stylistic
+  // concerns.  However there are some "stylistic" eslint rules we use that should
+  // not fail a PR since we can auto-fix them after merging to dev.  These rules
+  // should be set to WARN.
+  //
+  // ERROR should be used for "functional" rules that indicate a problem in the
+  // code, and these will cause a PR failure
+  // IMPORTANT: Ensure that rules used here are compatible with
+  // typescript-eslint. If they are not, we need to turn the rule off in our
+  // overrides for ts/tsx.
+  // To read the details for any rule, see https://eslint.org/docs/rules/[RULE-KEY]
   rules: {
-    'comma-dangle': ['warn', 'always-multiline'],
-    'import/extensions': 'off',
-    'import/no-duplicates': ['error'],
-    'import/no-internal-modules': ['error', {allow: ['*/*', '[~#@]*/**']}],
-    'import/order': [
-      'error',
-      {
-        alphabetize: {caseInsensitive: true, order: 'asc'},
-        distinctGroup: false,
-        'newlines-between': 'never',
-      },
-    ],
-    'import/prefer-default-export': 'off',
-    'max-len': [
-      'error',
-      {
-        code: 140,
-        ignoreComments: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true,
-      },
-    ],
-    'no-alert': 'off',
-    // TODO: Turn this on when we migrate the window.confirm calls
-    'no-case-declarations': 'off',
-    'no-console': 'off',
-    'no-else-return': 'off',
-    'no-nested-ternary': 'off',
-    'no-return-await': 'off',
-    'no-underscore-dangle': 'off',
-    'object-curly-spacing': ['error', 'never'],
-    'prettier/prettier': ['error'],
-    quotes: ['error', 'single', {allowTemplateLiterals: true}],
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/function-component-definition': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react/jsx-sort-props': [
-      'error',
-      {
-        callbacksLast: false,
-        ignoreCase: true,
-        noSortAlphabetically: false,
-        reservedFirst: false,
-        shorthandFirst: false,
-        shorthandLast: false,
-      },
-    ],
-    'react/no-children-prop': 'off',
-    'react/no-unused-prop-types': 'off',
-    'react/prop-types': 'off',
-    'react/require-default-props': 'off',
-    'sort-destructure-keys/sort-destructure-keys': [2, {caseSensitive: false}],
-    'sort-imports': ['error', {ignoreDeclarationSort: true}],
-    'sort-keys-fix/sort-keys-fix': 'warn',
+    ...coreRules,
+    ...importRules,
+    ...reactRules,
+    ...jsxA11yRules,
+  },
+  settings: {
+    ...importSettings,
   },
 };
+
+module.exports = config;

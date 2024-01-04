@@ -1,7 +1,7 @@
 {
   "name": "@ivosabev/eslint-config",
   "version": "0.8.0",
-  "description": "Reusable ESLint + Prettier Configuration",
+  "description": "Reusable ESLint + Prettier Configuration heavily based on @remix-run/eslint-config",
   "keywords": [
     "javascript",
     "typescript",
@@ -10,11 +10,6 @@
     "lint",
     "config",
     "prettier"
-  ],
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "node.js"
   ],
   "repository": {
     "type": "git",
@@ -29,10 +24,20 @@
   "engines": {
     "node": ">=16.0.0"
   },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "jest.js",
+    "jest-testing-library.js",
+    "node.js",
+    "remix.js",
+    "rules",
+    "settings"
+  ],
   "peerDependencies": {
-    "eslint": "^8.0.0",
-    "react": "^17.0.0 || ^18.0.0",
-    "typescript": "^5.0.0"
+    "eslint": "8.0.0",
+    "react": "18.0.0",
+    "typescript": "5.1.0"
   },
   "peerDependenciesMeta": {
     "typescript": {
@@ -40,23 +45,35 @@
     }
   },
   "dependencies": {
-    "@remix-run/eslint-config": "2.4.1",
-    "@typescript-eslint/eslint-plugin": "6.17.0",
-    "@typescript-eslint/parser": "6.17.0",
+    "@babel/core": "7.23.7",
+    "@babel/eslint-parser": "7.23.3",
+    "@babel/preset-react": "7.23.3",
+    "@rushstack/eslint-patch": "1.6.1",
+    "@typescript-eslint/eslint-plugin": "5.59.0",
+    "@typescript-eslint/parser": "5.59.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-jest": "27.6.1",
-    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-import-resolver-node": "0.3.9",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jest": "26.9.0",
+    "eslint-plugin-jest-dom": "5.1.0",
+    "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "5.1.2",
-    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-sort-destructure-keys": "1.5.0",
     "eslint-plugin-sort-keys-fix": "1.1.2",
-    "eslint-plugin-testing-library": "6.2.0"
+    "eslint-plugin-testing-library": "5.10.2"
   },
   "devDependencies": {
+    "@types/eslint": "8.56.1",
+    "eslint": "8.56.0",
+    "jest": "29.7.0",
     "npm-check": "6.0.1",
-    "release-it": "17.0.1"
+    "react": "18.2.0",
+    "release-it": "17.0.1",
+    "typescript": "5.3.3"
   },
   "scripts": {
     "lint": "eslint .",
