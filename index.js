@@ -1,15 +1,65 @@
 /** @type {import('@types/eslint').Linter.BaseConfig} */
 module.exports = {
-  extends: ['@remix-run/eslint-config', 'prettier', 'plugin:import/recommended'],
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+  },
+  extends: ['eslint:recommended', 'prettier', 'plugin:import/recommended'],
   overrides: [
+    // React
     {
-      files: ['**/*.ts?(x)'],
+      extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:react-hooks/recommended', 'plugin:jsx-a11y/recommended'],
+      files: ['**/*.{js,jsx,ts,tsx}'],
+      plugins: ['react', 'jsx-a11y'],
+      settings: {
+        formComponents: ['Form'],
+        linkComponents: [
+          {linkAttribute: 'to', name: 'Link'},
+          {linkAttribute: 'to', name: 'NavLink'},
+        ],
+        react: {
+          version: 'detect',
+        },
+      },
+    },
+    // TypeScript
+    {
+      extends: ['plugin:@typescript-eslint/recommended', 'plugin:import/recommended', 'plugin:import/typescript'],
+      files: ['**/*.{ts,tsx}'],
+      parser: '@typescript-eslint/parser',
+      plugins: ['@typescript-eslint', 'import'],
       rules: {
         '@typescript-eslint/no-unused-vars': 'warn',
         '@typescript-eslint/return-await': 'error',
       },
+      settings: {
+        'import/internal-regex': '^#/',
+        'import/resolver': {
+          node: {
+            extensions: ['.ts', '.tsx'],
+          },
+          typescript: {
+            alwaysTryTypes: true,
+          },
+        },
+      },
+    },
+    // Node
+    {
+      env: {
+        node: true,
+      },
+      files: ['.eslintrc.js'],
     },
   ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   plugins: ['prettier', 'sort-destructure-keys', 'sort-keys-fix'],
   rules: {
     'comma-dangle': ['warn', 'always-multiline'],
