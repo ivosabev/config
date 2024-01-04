@@ -1,6 +1,6 @@
 {
   "name": "@ivosabev/eslint-config",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "Reusable ESLint + Prettier Configuration heavily based on @remix-run/eslint-config",
   "keywords": [
     "javascript",
@@ -35,9 +35,9 @@
     "settings"
   ],
   "peerDependencies": {
-    "eslint": "8.0.0",
-    "react": "18.0.0",
-    "typescript": "5.1.0"
+    "eslint": "^8.0.0",
+    "react": "^18.0.0",
+    "typescript": "^5.1.0"
   },
   "peerDependenciesMeta": {
     "typescript": {
