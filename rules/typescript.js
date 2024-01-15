@@ -9,6 +9,7 @@ module.exports = {
   '@typescript-eslint/no-inferrable-types': 'off',
   '@typescript-eslint/no-namespace': 'off',
   '@typescript-eslint/no-non-null-assertion': 'off',
+  '@typescript-eslint/no-unnecessary-condition': 'error',
   '@typescript-eslint/no-unused-expressions': ['error', {allowShortCircuit: true, allowTaggedTemplates: true, allowTernary: true}],
   '@typescript-eslint/no-unused-vars': ['warn', {args: 'none', ignoreRestSiblings: true}],
   '@typescript-eslint/no-use-before-define': ['error', {classes: false, functions: false, typedefs: false, variables: false}],
