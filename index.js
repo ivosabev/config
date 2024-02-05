@@ -1,4 +1,3 @@
-const eslintConfigPrettier = require('eslint-config-prettier');
 // Splitting rules into separate modules allow for a lower-level API if our
 // default rules become difficult to extend without lots of duplication.
 const coreRules = require('./rules/core');
@@ -25,7 +24,7 @@ const config = {
     commonjs: true,
     es6: true,
   },
-  extends: ['eslint:recommended', 'prettier', 'plugin:import/recommended'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:import/recommended', 'plugin:@stylistic/disable-legacy'],
   overrides: [
     {
       extends: ['plugin:import/typescript', 'plugin:@typescript-eslint/recommended'],
@@ -50,8 +49,7 @@ const config = {
     requireConfigFile: false,
     sourceType: 'module',
   },
-
-  plugins: ['prettier', 'import', 'react', 'react-hooks', 'jsx-a11y', 'sort-destructure-keys', 'sort-keys-fix'],
+  plugins: ['import', 'react', 'react-hooks', 'jsx-a11y', 'sort-destructure-keys', 'sort-keys-fix', 'prettier', '@stylistic', '@stylistic/eslint-plugin-jsx'],
   // NOTE: In general - we want to use prettier for the majority of stylistic
   // concerns.  However there are some "stylistic" eslint rules we use that should
   // not fail a PR since we can auto-fix them after merging to dev.  These rules
@@ -72,7 +70,6 @@ const config = {
   settings: {
     ...importSettings,
   },
-  ...eslintConfigPrettier,
 };
 
 module.exports = config;

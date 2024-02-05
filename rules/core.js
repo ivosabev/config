@@ -3,8 +3,10 @@ const WARN = 1;
 const ERROR = 2;
 
 module.exports = {
+  '@stylistic/object-curly-spacing': ['error', 'never'],
+  '@stylistic/comma-dangle': ['warn', 'always-multiline'],
+  '@stylistic/new-parens': WARN,
   'array-callback-return': WARN,
-  'comma-dangle': ['warn', 'always-multiline'],
   'getter-return': WARN,
   'max-len': [
     'error',
@@ -15,7 +17,6 @@ module.exports = {
       ignoreTemplateLiterals: true,
     },
   ],
-  'new-parens': WARN,
   'no-alert': 'off',
   'no-array-constructor': WARN,
   'no-caller': ERROR,
@@ -105,7 +106,6 @@ module.exports = {
       ignoreImport: false,
     },
   ],
-  'object-curly-spacing': ['error', 'never'],
   'prettier/prettier': ['error'],
   quotes: ['error', 'single', {allowTemplateLiterals: true}],
   'require-yield': WARN,
