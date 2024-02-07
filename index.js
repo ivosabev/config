@@ -6,6 +6,7 @@ const jsxA11yRules = require('./rules/jsx-a11y');
 const reactRules = require('./rules/react');
 const typescriptRules = require('./rules/typescript');
 const importSettings = require('./settings/import');
+const remixSettings = require('./settings/remix');
 
 /**
  * @see https://github.com/eslint/eslint/issues/3458
@@ -49,7 +50,17 @@ const config = {
     requireConfigFile: false,
     sourceType: 'module',
   },
-  plugins: ['import', 'react', 'react-hooks', 'jsx-a11y', 'sort-destructure-keys', 'sort-keys-fix', 'prettier', '@stylistic', '@stylistic/eslint-plugin-jsx'],
+  plugins: [
+    'import',
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+    'sort-destructure-keys',
+    'sort-keys-fix',
+    'prettier',
+    '@stylistic',
+    '@stylistic/eslint-plugin-jsx',
+  ],
   // NOTE: In general - we want to use prettier for the majority of stylistic
   // concerns.  However there are some "stylistic" eslint rules we use that should
   // not fail a PR since we can auto-fix them after merging to dev.  These rules
@@ -69,6 +80,7 @@ const config = {
   },
   settings: {
     ...importSettings,
+    ...remixSettings,
   },
 };
 
