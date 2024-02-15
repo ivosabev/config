@@ -3,6 +3,7 @@ module.exports = {
   '@typescript-eslint/ban-types': 'off',
   '@typescript-eslint/consistent-type-assertions': 'warn',
   '@typescript-eslint/consistent-type-imports': 'warn',
+  '@typescript-eslint/method-signature-style': ['error', 'property'],
   '@typescript-eslint/no-empty-function': 'off',
   '@typescript-eslint/no-empty-interface': 'off',
   '@typescript-eslint/no-explicit-any': 'off',
