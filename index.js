@@ -25,7 +25,13 @@ const config = {
     commonjs: true,
     es6: true,
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:import/recommended', 'plugin:@stylistic/disable-legacy'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:import/recommended',
+    'plugin:@stylistic/disable-legacy',
+    'plugin:tailwindcss/recommended',
+  ],
   overrides: [
     {
       extends: ['plugin:import/typescript', 'plugin:@typescript-eslint/recommended'],
@@ -51,15 +57,16 @@ const config = {
     sourceType: 'module',
   },
   plugins: [
-    'import',
-    'react',
-    'react-hooks',
-    'jsx-a11y',
-    'sort-destructure-keys',
-    'sort-keys-fix',
-    'prettier',
     '@stylistic',
     '@stylistic/eslint-plugin-jsx',
+    'import',
+    'jsx-a11y',
+    'prettier',
+    'react-hooks',
+    'react',
+    'sort-destructure-keys',
+    'sort-keys-fix',
+    'tailwindcss',
   ],
   // NOTE: In general - we want to use prettier for the majority of stylistic
   // concerns.  However there are some "stylistic" eslint rules we use that should
@@ -77,6 +84,8 @@ const config = {
     ...importRules,
     ...reactRules,
     ...jsxA11yRules,
+    'tailwindcss/classnames-order': 'error',
+    'tailwindcss/no-custom-classname': 'off',
   },
   settings: {
     ...importSettings,
