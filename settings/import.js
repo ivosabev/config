@@ -5,7 +5,7 @@ module.exports = {
   },
   'import/resolver': {
     [require.resolve('eslint-import-resolver-node')]: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.cjs', '.cts', '.mjs', '.mts'],
     },
     [require.resolve('eslint-import-resolver-typescript')]: {
       alwaysTryTypes: true,
