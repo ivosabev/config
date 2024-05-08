@@ -1,6 +1,6 @@
 {
   "name": "@ivosabev/eslint-config",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Reusable ESLint + Prettier Configuration heavily based on @remix-run/eslint-config",
   "keywords": [
     "javascript",
