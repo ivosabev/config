@@ -10,6 +10,7 @@ module.exports = {
     commonjs: true,
     es6: true,
   },
+  ignorePatterns: ['!**/.server', '!**/.client'],
   overrides: [
     {
       files: ['**/routes/**/*.js?(x)', '**/routes/**/*.tsx', 'app/root.js?(x)', 'app/root.tsx'],

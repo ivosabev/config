@@ -21,6 +21,10 @@ module.exports = {
   '@stylistic/prop-types': 'off',
   '@stylistic/react-in-jsx-scope': OFF,
   '@stylistic/require-default-props': 'off',
+  // react-hooks
+  // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
+  'react-hooks/exhaustive-deps': WARN,
+  'react-hooks/rules-of-hooks': ERROR,
   // react
   'react/display-name': WARN,
   'react/forbid-foreign-prop-types': [WARN, {allowInPropTypes: true}],
@@ -40,8 +44,4 @@ module.exports = {
   'react/no-typos': WARN,
   'react/require-render-return': ERROR,
   'react/style-prop-object': WARN,
-  // react-hooks
-  // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
-  'react-hooks/exhaustive-deps': WARN,
-  'react-hooks/rules-of-hooks': ERROR,
 };

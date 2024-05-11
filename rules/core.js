@@ -3,9 +3,9 @@ const WARN = 1;
 const ERROR = 2;
 
 module.exports = {
-  '@stylistic/object-curly-spacing': ['error', 'never'],
   '@stylistic/comma-dangle': ['warn', 'always-multiline'],
   '@stylistic/new-parens': WARN,
+  '@stylistic/object-curly-spacing': ['error', 'never'],
   'array-callback-return': WARN,
   'getter-return': WARN,
   'max-len': [

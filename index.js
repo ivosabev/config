@@ -7,6 +7,7 @@ const reactRules = require('./rules/react');
 const typescriptRules = require('./rules/typescript');
 const importSettings = require('./settings/import');
 const remixSettings = require('./settings/remix');
+const typescriptSettings = require('./settings/typescript');
 
 /**
  * @see https://github.com/eslint/eslint/issues/3458
@@ -29,12 +30,16 @@ const config = {
     'eslint:recommended',
     'plugin:prettier/recommended',
     'plugin:import/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
     'plugin:@stylistic/disable-legacy',
     'plugin:tailwindcss/recommended',
   ],
   overrides: [
     {
-      extends: ['plugin:import/typescript', 'plugin:@typescript-eslint/recommended'],
+      extends: ['plugin:@typescript-eslint/recommended', 'plugin:import/recommended', 'plugin:import/typescript'],
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
@@ -90,6 +95,7 @@ const config = {
   settings: {
     ...importSettings,
     ...remixSettings,
+    ...typescriptSettings,
   },
 };
 

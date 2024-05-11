@@ -1,4 +1,7 @@
 module.exports = {
+  'import/resolver': {
+    typescript: {},
+  },
   react: {
     formComponents: ['Form'],
     linkComponents: [
