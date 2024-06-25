@@ -42,6 +42,7 @@ module.exports = {
   'react/no-render-return-value': ERROR,
   'react/no-string-refs': WARN,
   'react/no-typos': WARN,
+  'react/no-unescaped-entities': OFF,
   'react/require-render-return': ERROR,
   'react/style-prop-object': WARN,
 };
