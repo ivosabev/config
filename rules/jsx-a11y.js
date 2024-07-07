@@ -1,4 +1,4 @@
-// const OFF = 0;
+const OFF = 0;
 const WARN = 1;
 // const ERROR = 2;
 
@@ -11,11 +11,13 @@ module.exports = {
   'jsx-a11y/aria-proptypes': WARN,
   'jsx-a11y/aria-role': [WARN, {ignoreNonDOM: true}],
   'jsx-a11y/aria-unsupported-elements': WARN,
+  'jsx-a11y/click-events-have-key-events': OFF,
   'jsx-a11y/iframe-has-title': WARN,
   'jsx-a11y/img-redundant-alt': WARN,
   'jsx-a11y/lang': WARN,
   'jsx-a11y/no-access-key': WARN,
   'jsx-a11y/no-redundant-roles': WARN,
+  'jsx-a11y/no-static-element-interactions': OFF,
   'jsx-a11y/role-has-required-aria-props': WARN,
   'jsx-a11y/role-supports-aria-props': WARN,
 };
