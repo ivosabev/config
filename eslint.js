@@ -106,7 +106,7 @@ export const config = [
 					],
 					'react/require-render-return': ERROR,
 				},
-		  }
+			}
 		: null,
 
 	// react-hook rules are applicable in ts/js/tsx/jsx, but only with React as a
@@ -121,7 +121,7 @@ export const config = [
 					'react-hooks/exhaustive-deps': WARN,
 					'react-hooks/rules-of-hooks': ERROR,
 				},
-		  }
+			}
 		: null,
 
 	// JS and JSX files
@@ -254,7 +254,7 @@ export const config = [
 					// - @typescript-eslint/no-unsafe-return
 					// - @typescript-eslint/no-unsafe-assignment
 				},
-		  }
+			}
 		: null,
 
 	// This assumes test files are those which are in the test directory or have
@@ -290,7 +290,7 @@ export const config = [
 					'testing-library/no-wait-for-side-effects': ERROR,
 					'testing-library/prefer-find-by': ERROR,
 				},
-		  }
+			}
 		: null,
 
 	hasJestDom
@@ -306,7 +306,7 @@ export const config = [
 					'jest-dom/prefer-focus': ERROR,
 					'jest-dom/prefer-required': ERROR,
 				},
-		  }
+			}
 		: null,
 
 	hasVitest
@@ -321,7 +321,7 @@ export const config = [
 					// made aware of it
 					'vitest/no-focused-tests': [WARN, {fixable: false}],
 				},
-		  }
+			}
 		: null,
 ].filter(Boolean);
 

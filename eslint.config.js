@@ -1,1 +1,4 @@
-export {default} from './eslint.js';
+import {config as defaultConfig} from './eslint.js';
+
+/** @type {import("eslint").Linter.Config} */
+export default [...defaultConfig];
