@@ -43,11 +43,17 @@ export const config = [
 			},
 		},
 		plugins: {
+			'@stylistic/js': (await import('@stylistic/eslint-plugin-js')).default,
 			import: (await import('eslint-plugin-import-x')).default,
 			'sort-destructure-keys': (await import('eslint-plugin-sort-destructure-keys')).default,
 			'sort-keys-fix': (await import('eslint-plugin-sort-keys-fix')).default,
 		},
 		rules: {
+			'@stylistic/js/func-call-spacing': [ERROR, 'never'],
+			'@stylistic/js/no-multi-spaces': [ERROR],
+			'@stylistic/js/no-multiple-empty-lines': [ERROR, {max: 1}],
+			'@stylistic/js/quotes': [ERROR, 'single', {allowTemplateLiterals: true}],
+			'@stylistic/js/space-before-function-paren': [ERROR, 'never'],
 			'import/no-duplicates': [WARN, {'prefer-inline': true}],
 			'import/order': [
 				WARN,
@@ -80,8 +86,13 @@ export const config = [
 					react: (await import('eslint-plugin-react')).default,
 				},
 				rules: {
+					'react/jsx-closing-bracket-location': [ERROR, {nonEmpty: 'after-props', selfClosing: 'tag-aligned'}],
+					'react/jsx-first-prop-new-line': [ERROR, 'multiline'],
 					'react/jsx-key': WARN,
+					'react/jsx-max-props-per-line': [ERROR, {maximum: {multi: 1, single: 5}}],
+					'react/jsx-newline': [ERROR, {prevent: true}],
 					'react/jsx-no-undef': ERROR,
+					'react/jsx-one-expression-per-line': [ERROR, {allow: 'single-child'}],
 					'react/jsx-sort-props': [
 						ERROR,
 						{
