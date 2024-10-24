@@ -53,7 +53,14 @@ export const config = [
 			'@stylistic/js/no-multi-spaces': [ERROR],
 			'@stylistic/js/no-multiple-empty-lines': [ERROR, {max: 1}],
 			'@stylistic/js/quotes': [ERROR, 'single', {allowTemplateLiterals: true}],
-			'@stylistic/js/space-before-function-paren': [ERROR, 'never'],
+			'@stylistic/js/space-before-function-paren': [
+				ERROR,
+				{
+					anonymous: 'always',
+					asyncArrow: 'always',
+					named: 'always',
+				},
+			],
 			'import/no-duplicates': [WARN, {'prefer-inline': true}],
 			'import/order': [
 				WARN,
