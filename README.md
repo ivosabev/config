@@ -105,6 +105,21 @@ configurations minimal and only enable rules that catch real problems (the kind
 that are likely to happen). This keeps our linting faster and reduces the number
 of false positives.
 
+### package.json
+
+You may want to add the following scripts to your project:
+
+```json
+{
+  "format-check": "prettier --check .",
+  "format": "prettier --write .",
+  "lint-check": "eslint .",
+  "lint": "eslint .",
+  "typecheck": "tsc",
+  "validate": "run-p -l format lint typecheck"
+}
+```
+
 ## Credits
 
 - https://github.com/epicweb-dev/config
