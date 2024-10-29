@@ -48,8 +48,8 @@ import defaultConfig from '@ivosabev/config/prettier';
 
 /** @type {import("prettier").Options} */
 export default {
-	...defaultConfig,
-	// .. your overrides here...
+  ...defaultConfig,
+  // .. your overrides here...
 };
 ```
 
@@ -61,14 +61,14 @@ Create a `tsconfig.json` file in your project root with the following content:
 
 ```json
 {
-	"extends": ["@ivosabev/config/typescript"],
-	"include": ["@ivosabev/config/reset.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
-	"compilerOptions": {
-		"paths": {
-			"#app/*": ["./app/*"],
-			"#tests/*": ["./tests/*"]
-		}
-	}
+  "extends": ["@ivosabev/config/typescript"],
+  "include": ["@ivosabev/config/reset.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "compilerOptions": {
+    "paths": {
+      "#app/*": ["./app/*"],
+      "#tests/*": ["./tests/*"]
+    }
+  }
 }
 ```
 
