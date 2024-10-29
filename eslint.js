@@ -69,8 +69,8 @@ export const config = [
       '@stylistic/js/max-len': [
         ERROR,
         {
-          code: 120,
-          comments: 120,
+          code: 140,
+          comments: 140,
           ignoreComments: false,
           ignoreRegExpLiterals: true,
           ignoreStrings: true,

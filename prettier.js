@@ -30,7 +30,7 @@ export const config = {
     },
   ],
   plugins: ['prettier-plugin-tailwindcss'],
-  printWidth: 120,
+  printWidth: 140,
   proseWrap: 'preserve',
   quoteProps: 'as-needed',
   requirePragma: false,
