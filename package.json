@@ -75,7 +75,7 @@
     "format": "prettier --write .",
     "lint-check": "eslint .",
     "lint": "eslint .",
-    "release": "release-it",
+    "release": "npm run validate && release-it",
     "typecheck": "tsc",
     "validate": "run-p -l format lint typecheck",
     "up": "npm-check --update -f"
