@@ -64,6 +64,7 @@ export const config = [
       ],
       '@stylistic/js/comma-spacing': [ERROR, {after: true, before: false}],
       '@stylistic/js/func-call-spacing': [ERROR, 'never'],
+      '@stylistic/js/indent': [ERROR, 2, {SwitchCase: 1, offsetTernaryExpressions: true}],
       '@stylistic/js/keyword-spacing': [ERROR, {after: true, before: true}],
       '@stylistic/js/max-len': [
         ERROR,

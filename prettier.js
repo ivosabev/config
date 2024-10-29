@@ -41,7 +41,7 @@ export const config = {
   tailwindAttributes: ['class', 'className', 'ngClass', '.*[cC]lassName'],
   tailwindFunctions: ['clsx', 'cn'],
   trailingComma: 'all',
-  useTabs: true,
+  useTabs: false,
 };
 
 // this is for backward compatibility
