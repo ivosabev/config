@@ -61,7 +61,7 @@ Create a `tsconfig.json` file in your project root with the following content:
 
 ```json
 {
-  "extends": ["@ivosabev/config/typescript"],
+  "extends": "@ivosabev/config/typescript",
   "include": ["@ivosabev/config/reset.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   "compilerOptions": {
     "paths": {
