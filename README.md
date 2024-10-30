@@ -84,7 +84,6 @@ If you want to build with `tsc` create a `tsconfig.build.json` file in your proj
     "tsBuildInfoFile": ".tsbuildinfo/build.tsbuildinfo"
   }
 }
-
 ```
 
 <details>
