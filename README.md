@@ -72,6 +72,21 @@ Create a `tsconfig.json` file in your project root with the following content:
 }
 ```
 
+If you want to build with `tsc` create a `tsconfig.build.json` file in your project root with the following content:
+
+```json
+{
+  "extends": "@ivosabev/config/typescript/build",
+  "include": ["@ivosabev/config/reset.d.ts", "src", "tailwind.config.ts"],
+  "compilerOptions": {
+    "declarationDir": "dist/dts",
+    "outDir": "dist/esm",
+    "tsBuildInfoFile": ".tsbuildinfo/build.tsbuildinfo"
+  }
+}
+
+```
+
 <details>
   <summary>Customizing TypeScript</summary>
 

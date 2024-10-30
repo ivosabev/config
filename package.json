@@ -32,10 +32,13 @@
   },
   "exports": {
     ".": "./index.js",
+    "./eslint": "./eslint.js",
     "./prettier": "./prettier.js",
-    "./typescript": "./typescript.json",
-    "./reset.d.ts": "./reset.d.ts",
-    "./eslint": "./eslint.js"
+    "./typescript/base": "./typescript/base.json",
+    "./typescript/build": "./typescript/build.json",
+    "./typescript/dom": "./typescript/dom.json",
+    "./typescript/node": "./typescript/node.json",
+    "./typescript/reset.d.ts": "./typescript/reset.d.ts"
   },
   "prettier": "./prettier.js",
   "dependencies": {

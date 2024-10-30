@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["./reset.d.ts"],
+  "compilerOptions": {
+    // Type Checking
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictBuiltinIteratorReturn": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true,
+
+    // Modules
+    "allowArbitraryExtensions": false,
+    "allowImportingTsExtensions": false,
+    "allowUmdGlobalAccess": false,
+    "baseUrl": ".",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    // "moduleSuffixes"
+    "noResolve": false,
+    "noUncheckedSideEffectImports": true,
+    "paths": {"#/*": ["./*"]},
+    "resolveJsonModule": true,
+    "resolvePackageJsonExports": true,
+    "resolvePackageJsonImports": true,
+    // "rootDir"
+    // "rootDirs"
+    // "typeRoots"
+    // "types"
+
+    // Emit
+    // declaration
+    // declarationDir
+    // declarationMap
+    // downlevelIteration
+    // emitBOM
+    // emitDeclarationOnly
+    // importHelpers
+    // inlineSourceMap
+    // inlineSources
+    // mapRoot
+    // newLine
+    "noEmit": true,
+    // noEmitHelpers
+    // noEmitOnError
+    // outDir
+    // outFile
+    // preserveConstEnums
+    // removeComments
+    // sourceMap
+    // sourceRoot
+    // stripInternal
+
+    // JavaScript Support
+    "allowJs": true,
+    "checkJs": false,
+    // maxNodeModuleJsDepth
+
+    // Editor Support
+    "disableSizeLimit": false,
+    "plugins": [],
+
+    // Interop Constraints
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    // "isolatedDeclarations" - set in the build config
+    "isolatedModules": true,
+    "preserveSymlinks": false,
+    "verbatimModuleSyntax": true,
+
+    // Backwards Compatibility
+    // "noImplicitUseStrict"
+    // "noStrictGenericChecks"
+    // "suppressExcessPropertyErrors"
+    // "suppressImplicitAnyIndexErrors"
+
+    // Language and Environment
+    // "emitDecoratorMetadata"
+    // "experimentalDecorators"
+    "jsx": "react-jsx",
+    // "jsxFactory"
+    // "jsxFragmentFactory"
+    // "jsxImportSource"
+    // "lib" - set in dom/no-dom configs ? or let client set them
+    "lib": ["ES2023"],
+    "moduleDetection": "auto",
+    // "noLib"
+    // "reactNamespace"
+    "target": "ES2023",
+    "useDefineForClassFields": true,
+
+    // Compiler Diagnostics
+    // "explainFiles"
+    // "extendedDiagnostics"
+    // "generateCpuProfile"
+    // "generateTrace"
+    // "listEmittedFiles"
+    // "listFiles"
+    // "noCheck"
+    // "traceResolution"
+
+    // Projects
+    // "composite"
+    // "disableReferencedProjectLoad"
+    // "disableSolutionSearching"
+    // "disableSourceOfProjectReferenceRedirect"
+    // "incremental" - set in the build config
+    // "tsBuildInfoFile" - set in the build config
+
+    // Output Formatting
+    "noErrorTruncation": true,
+    // "preserveWatchOutput"
+    "pretty": true,
+
+    // Completeness
+    "skipLibCheck": true
+  }
+}
