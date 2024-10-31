@@ -52,16 +52,7 @@ export const config = [
       '@stylistic/js/array-bracket-newline': [ERROR, 'consistent'],
       '@stylistic/js/array-bracket-spacing': [ERROR, 'never'],
       '@stylistic/js/array-element-newline': [ERROR, 'consistent'],
-      '@stylistic/js/comma-dangle': [
-        ERROR,
-        {
-          arrays: 'always-multiline',
-          exports: 'always-multiline',
-          functions: 'never',
-          imports: 'never',
-          objects: 'always-multiline',
-        },
-      ],
+      '@stylistic/js/comma-dangle': [ERROR, 'always-multiline'],
       '@stylistic/js/comma-spacing': [ERROR, {after: true, before: false}],
       '@stylistic/js/func-call-spacing': [ERROR, 'never'],
       '@stylistic/js/indent': [ERROR, 2, {SwitchCase: 1, offsetTernaryExpressions: true}],
