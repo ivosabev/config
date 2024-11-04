@@ -166,10 +166,9 @@ export const config = [
       'no-unused-vars': [
         WARN,
         {
-          args: 'after-used',
-          argsIgnorePattern: '^_',
+          args: 'none',
           ignoreRestSiblings: true,
-          varsIgnorePattern: '^ignored',
+          vars: 'all',
         },
       ],
       quotes: ['error', 'single', {allowTemplateLiterals: true}],
