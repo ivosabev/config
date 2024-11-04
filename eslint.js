@@ -166,9 +166,13 @@ export const config = [
       'no-unused-vars': [
         WARN,
         {
-          args: 'none',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
           ignoreRestSiblings: true,
-          vars: 'all',
+          varsIgnorePattern: '^_',
         },
       ],
       quotes: ['error', 'single', {allowTemplateLiterals: true}],
@@ -212,8 +216,11 @@ export const config = [
             {
               args: 'after-used',
               argsIgnorePattern: '^_',
+              caughtErrors: 'all',
+              caughtErrorsIgnorePattern: '^_',
+              destructuredArrayIgnorePattern: '^_',
               ignoreRestSiblings: true,
-              varsIgnorePattern: '^ignored',
+              varsIgnorePattern: '^_',
             },
           ],
           '@typescript-eslint/no-use-before-define': [
