@@ -84,6 +84,7 @@ export const config = [
         },
       ],
       '@stylistic/js/space-infix-ops': [ERROR, {int32Hint: false}],
+      curly: [ERROR, 'all'],
       'import/no-duplicates': [WARN, {'prefer-inline': true}],
       'import/order': [
         WARN,
