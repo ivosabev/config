@@ -5,6 +5,7 @@ export const config = {
   bracketSpacing: false,
   embeddedLanguageFormatting: 'auto',
   endOfLine: 'lf',
+  experimentalTernaries: true,
   htmlWhitespaceSensitivity: 'css',
   insertPragma: false,
   jsxSingleQuote: false,

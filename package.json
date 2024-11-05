@@ -40,7 +40,6 @@
     "./typescript/node": "./typescript/node.json",
     "./typescript/reset.d.ts": "./typescript/reset.d.ts"
   },
-  "prettier": "./prettier.js",
   "dependencies": {
     "@stylistic/eslint-plugin-js": "2.10.1",
     "@total-typescript/ts-reset": "0.6.1",
@@ -74,13 +73,11 @@
     "typescript": "5.6.3"
   },
   "scripts": {
-    "format-check": "prettier --check .",
-    "format": "prettier --write .",
     "lint-check": "eslint .",
     "lint": "eslint .",
     "release": "npm run validate && release-it",
     "typecheck": "tsc",
-    "validate": "run-p -l format lint typecheck",
+    "validate": "run-p -l lint typecheck",
     "up": "npm-check --update -f"
   },
   "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
