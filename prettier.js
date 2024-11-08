@@ -14,9 +14,7 @@ export const config = {
     // issues when running install...
     {
       files: ['**/package.json'],
-      options: {
-        useTabs: false,
-      },
+      options: {useTabs: false},
     },
     {
       files: ['**/*.mdx'],

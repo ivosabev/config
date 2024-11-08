@@ -59,6 +59,7 @@ export const config = [
       '@stylistic/js/comma-dangle': [ERROR, 'always-multiline'],
       '@stylistic/js/comma-spacing': [ERROR, {after: true, before: false}],
       '@stylistic/js/func-call-spacing': [ERROR, 'never'],
+      '@stylistic/js/function-paren-newline': [ERROR, 'multiline'],
       '@stylistic/js/indent': [ERROR, 2, {SwitchCase: 1, offsetTernaryExpressions: false}],
       '@stylistic/js/keyword-spacing': [ERROR, {after: true, before: true}],
       '@stylistic/js/linebreak-style': [ERROR, 'unix'],
@@ -78,7 +79,9 @@ export const config = [
       ],
       '@stylistic/js/no-multi-spaces': [ERROR],
       '@stylistic/js/no-multiple-empty-lines': [ERROR, {max: 1, maxEOF: 1}],
+      '@stylistic/js/object-curly-newline': [ERROR, {multiline: true}],
       '@stylistic/js/object-curly-spacing': [ERROR, 'never'],
+      '@stylistic/js/object-property-newline': [ERROR, {allowAllPropertiesOnSameLine: true}],
       '@stylistic/js/quotes': [ERROR, 'single', {allowTemplateLiterals: true}],
       '@stylistic/js/semi': [ERROR, 'always'],
       '@stylistic/js/semi': [ERROR, 'always'],
@@ -116,15 +119,12 @@ export const config = [
       files: ['**/*.tsx', '**/*.jsx'],
       languageOptions: {
         parser: (await import('typescript-eslint')).parser,
-        parserOptions: {
-          jsx: true,
-        },
+        parserOptions: {jsx: true},
       },
-      plugins: {
-        react: (await import('eslint-plugin-react')).default,
-      },
+      plugins: {react: (await import('eslint-plugin-react')).default},
       rules: {
-        'react/jsx-closing-bracket-location': [ERROR, {selfClosing: 'tag-aligned'}],
+        'react/jsx-closing-bracket-location': [ERROR, 'line-aligned'],
+        // , {selfClosing: 'tag-aligned'}],
         'react/jsx-first-prop-new-line': [ERROR, 'multiline'],
         'react/jsx-key': WARN,
         'react/jsx-max-props-per-line': [ERROR, {maximum: {multi: 1, single: 5}}],
@@ -141,6 +141,15 @@ export const config = [
             shorthandLast: false,
           },
         ],
+        'react/jsx-wrap-multilines': [ERROR, {
+          arrow: 'parens-new-line',
+          assignment: 'parens-new-line',
+          condition: 'parens-new-line',
+          declaration: 'parens-new-line',
+          logical: 'parens-new-line',
+          prop: 'parens-new-line',
+          return: 'parens-new-line',
+        }],
         'react/require-render-return': ERROR,
       },
     }
@@ -151,18 +160,12 @@ export const config = [
   hasReact ?
     {
       files: ['**/*.ts?(x)', '**/*.js?(x)'],
-      plugins: {
-        'react-hooks': (await import('eslint-plugin-react-hooks')).default,
-      },
+      plugins: {'react-hooks': (await import('eslint-plugin-react-hooks')).default},
       rules: {
         'react-hooks/exhaustive-deps': WARN,
         'react-hooks/rules-of-hooks': ERROR,
       },
-      settings: {
-        react: {
-          version: 'detect',
-        },
-      },
+      settings: {react: {version: 'detect'}},
     }
     : null,
 
@@ -196,13 +199,9 @@ export const config = [
       files: ['**/*.ts?(x)'],
       languageOptions: {
         parser: (await import('typescript-eslint')).parser,
-        parserOptions: {
-          projectService: true,
-        },
+        parserOptions: {projectService: true},
       },
-      plugins: {
-        '@typescript-eslint': (await import('typescript-eslint')).plugin,
-      },
+      plugins: {'@typescript-eslint': (await import('typescript-eslint')).plugin},
       rules: {
         '@typescript-eslint/consistent-type-imports': [
           WARN,
@@ -330,9 +329,7 @@ export const config = [
     {
       files: testFiles,
       ignores: [...playwrightFiles],
-      plugins: {
-        'testing-library': (await import('eslint-plugin-testing-library')).default,
-      },
+      plugins: {'testing-library': (await import('eslint-plugin-testing-library')).default},
       rules: {
         'testing-library/no-unnecessary-act': [ERROR, {isStrict: false}],
         'testing-library/no-wait-for-side-effects': ERROR,
@@ -345,9 +342,7 @@ export const config = [
     {
       files: testFiles,
       ignores: [...playwrightFiles],
-      plugins: {
-        'jest-dom': (await import('eslint-plugin-jest-dom')).default,
-      },
+      plugins: {'jest-dom': (await import('eslint-plugin-jest-dom')).default},
       rules: {
         'jest-dom/prefer-checked': ERROR,
         'jest-dom/prefer-enabled-disabled': ERROR,
@@ -361,9 +356,7 @@ export const config = [
     {
       files: testFiles,
       ignores: [...playwrightFiles],
-      plugins: {
-        vitest: (await import('@vitest/eslint-plugin')).default,
-      },
+      plugins: {vitest: (await import('@vitest/eslint-plugin')).default},
       rules: {
         // you don't want the editor to autofix this, but we do want to be
         // made aware of it
@@ -373,14 +366,8 @@ export const config = [
     : null,
   ...tailwind.configs['flat/recommended'],
   {
-    rules: {
-      'tailwindcss/no-custom-classname': OFF,
-    },
-    settings: {
-      tailwindcss: {
-        callees: ['classnames', 'clsx', 'ctl', 'cn'],
-      },
-    },
+    rules: {'tailwindcss/no-custom-classname': OFF},
+    settings: {tailwindcss: {callees: ['classnames', 'clsx', 'ctl', 'cn']}},
   },
 ].filter(Boolean);
 
