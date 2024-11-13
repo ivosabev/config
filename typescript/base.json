@@ -73,13 +73,7 @@
 
     // Editor Support
     "disableSizeLimit": false,
-    "plugins": [
-      {
-        "name": "ts-plugin-sort-import-suggestions",
-        "moveUpPatterns": [".", "#", "~", "@"],
-        "moveDownPatterns": [],
-      }
-    ],
+    "plugins": [],
 
     // Interop Constraints
     "allowSyntheticDefaultImports": true,
