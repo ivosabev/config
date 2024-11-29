@@ -217,7 +217,6 @@ export const config = [
             prefer: 'type-imports',
           },
         ],
-        '@typescript-eslint/no-floating-promises': ERROR,
         '@typescript-eslint/no-misused-promises': [ERROR, {checksVoidReturn: false}],
         '@typescript-eslint/no-unused-expressions': [
           ERROR,
