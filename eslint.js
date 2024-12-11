@@ -133,7 +133,7 @@ export const config = [
         // , {selfClosing: 'tag-aligned'}],
         'react/jsx-first-prop-new-line': [ERROR, 'multiline'],
         'react/jsx-key': WARN,
-        'react/jsx-max-props-per-line': [ERROR, {maximum: {multi: 1, single: 5}}],
+        'react/jsx-max-props-per-line': [ERROR, {maximum: {multi: 1, single: 2}, when: 'always'}],
         'react/jsx-no-undef': ERROR,
         'react/jsx-one-expression-per-line': [ERROR, {allow: 'non-jsx'}],
         'react/jsx-sort-props': [
