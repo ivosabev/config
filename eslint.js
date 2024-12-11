@@ -71,7 +71,7 @@ export const config = [
         {
           code: 140,
           comments: 140,
-          ignoreComments: false,
+          ignoreComments: true,
           ignoreRegExpLiterals: true,
           ignoreStrings: true,
           ignoreTemplateLiterals: true,
