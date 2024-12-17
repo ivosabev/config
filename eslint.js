@@ -374,6 +374,20 @@ export const config = [
     rules: {'tailwindcss/no-custom-classname': OFF},
     settings: {tailwindcss: {callees: ['classnames', 'clsx', 'ctl', 'cn']}},
   },
+
+  // JSON/JSONC files
+  {
+    files: ['*.json', '*.json5', '*.jsonc'],
+    languageOptions: {
+      parser: (await import('jsonc-eslint-parser')),
+    },
+    plugins: {jsonc: (await import('eslint-plugin-jsonc')).default},
+    rules: {
+      'jsonc/comma-dangle': ['error', 'never'],
+      'jsonc/indent': ['error', 2],
+      'jsonc/object-curly-spacing': ['error', 'always'],
+    },
+  },
 ].filter(Boolean);
 
 // this is for backward compatibility
