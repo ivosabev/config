@@ -41,11 +41,11 @@
     "./typescript/reset.d.ts": "./typescript/reset.d.ts"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "4.0.1",
+    "@stylistic/eslint-plugin": "4.1.0",
     "@total-typescript/ts-reset": "0.6.1",
-    "@typescript-eslint/eslint-plugin": "8.24.1",
-    "@typescript-eslint/parser": "8.24.1",
-    "@vitest/eslint-plugin": "1.1.31",
+    "@typescript-eslint/eslint-plugin": "8.25.0",
+    "@typescript-eslint/parser": "8.25.0",
+    "@vitest/eslint-plugin": "1.1.36",
     "eslint": "9.21.0",
     "eslint-import-resolver-node": "0.3.9",
     "eslint-import-resolver-typescript": "3.8.3",
@@ -62,7 +62,7 @@
     "globals": "16.0.0",
     "jsonc-eslint-parser": "2.4.0",
     "ts-plugin-sort-import-suggestions": "1.0.4",
-    "typescript-eslint": "8.24.1"
+    "typescript-eslint": "8.25.0"
   },
   "devDependencies": {
     "@types/react": "19.0.10",
