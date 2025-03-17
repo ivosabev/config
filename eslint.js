@@ -1,4 +1,4 @@
-import tailwind from 'eslint-plugin-tailwindcss';
+// import tailwind from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 
 const OFF = 'off';
@@ -369,11 +369,12 @@ export const config = [
       },
     }
     : null,
-  ...tailwind.configs['flat/recommended'],
-  {
-    rules: {'tailwindcss/no-custom-classname': OFF},
-    settings: {tailwindcss: {callees: ['classnames', 'clsx', 'ctl', 'cn']}},
-  },
+  // TODO: Disable for now until https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/325
+  // ...tailwind.configs['flat/recommended'],
+  // {
+  //   rules: {'tailwindcss/no-custom-classname': OFF},
+  //   settings: {tailwindcss: {callees: ['classnames', 'clsx', 'ctl', 'cn']}},
+  // },
 
   // JSON/JSONC files
   {
