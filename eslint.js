@@ -1,7 +1,7 @@
 // import tailwind from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 
-const OFF = 'off';
+const _OFF = 'off';
 const ERROR = 'error';
 const WARN = 'warn';
 
