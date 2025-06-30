@@ -60,7 +60,7 @@ export const config = [
       '@stylistic/comma-dangle': [ERROR, 'always-multiline'],
       '@stylistic/comma-spacing': [ERROR, {after: true, before: false}],
       '@stylistic/computed-property-spacing': [ERROR, 'never'],
-      '@stylistic/func-call-spacing': [ERROR, 'never'],
+      '@stylistic/function-call-spacing': [ERROR, 'never'],
       '@stylistic/function-paren-newline': [ERROR, 'multiline'],
       '@stylistic/indent': [ERROR, 2, {SwitchCase: 1, offsetTernaryExpressions: false}],
       '@stylistic/key-spacing': [ERROR, {afterColon: true, beforeColon: false}],
