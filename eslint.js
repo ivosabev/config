@@ -69,8 +69,8 @@ export const config = [
       '@stylistic/max-len': [
         ERROR,
         {
-          code: 140,
-          comments: 140,
+          code: 150,
+          comments: 150,
           ignoreComments: true,
           ignoreRegExpLiterals: true,
           ignoreStrings: true,
@@ -108,7 +108,7 @@ export const config = [
           pathGroups: [{group: 'internal', pattern: '#*/**'}],
         },
       ],
-      'newline-destructuring/newline': [ERROR, {consistent: true, items: 20, itemsWithRest: 19, maxLength: 140}],
+      'newline-destructuring/newline': [ERROR, {consistent: true, items: 20, itemsWithRest: 19, maxLength: 150}],
       'no-func-assign': ERROR,
       'no-global-assign': ERROR,
       'no-unexpected-multiline': ERROR,
