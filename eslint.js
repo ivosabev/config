@@ -86,7 +86,7 @@ export const config = [
       '@stylistic/object-curly-spacing': [ERROR, 'never'],
       '@stylistic/object-property-newline': [ERROR, {allowAllPropertiesOnSameLine: true}],
       '@stylistic/quote-props': [ERROR, 'as-needed'],
-      '@stylistic/quotes': [ERROR, 'single', {allowTemplateLiterals: true}],
+      '@stylistic/quotes': [ERROR, 'single', {allowTemplateLiterals: 'always'}],
       '@stylistic/semi': [ERROR, 'always'],
       '@stylistic/semi': [ERROR, 'always'],
       '@stylistic/space-before-function-paren': [
