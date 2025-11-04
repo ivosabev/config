@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "@ivosabev/config",
-  "version": "2.10.5",
+  "version": "2.10.6",
   "description": "Reusable ESLint, Prettier, TypeScript configs.",
   "keywords": [
     "javascript",
