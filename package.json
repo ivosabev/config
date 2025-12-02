@@ -41,11 +41,11 @@
     "./typescript/reset.d.ts": "./typescript/reset.d.ts"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "5.5.0",
+    "@stylistic/eslint-plugin": "5.6.1",
     "@total-typescript/ts-reset": "0.6.1",
-    "@typescript-eslint/eslint-plugin": "8.46.4",
-    "@typescript-eslint/parser": "8.46.4",
-    "@vitest/eslint-plugin": "1.4.3",
+    "@typescript-eslint/eslint-plugin": "8.48.1",
+    "@typescript-eslint/parser": "8.48.1",
+    "@vitest/eslint-plugin": "1.5.1",
     "eslint": "9.39.1",
     "eslint-import-resolver-node": "0.3.9",
     "eslint-import-resolver-typescript": "4.4.4",
@@ -58,18 +58,18 @@
     "eslint-plugin-sort-destructure-keys": "2.0.0",
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-tailwindcss": "3.18.2",
-    "eslint-plugin-testing-library": "7.13.4",
+    "eslint-plugin-testing-library": "7.13.5",
     "globals": "16.5.0",
     "jsonc-eslint-parser": "2.4.1",
     "ts-plugin-sort-import-suggestions": "1.0.4",
-    "typescript-eslint": "8.46.4"
+    "typescript-eslint": "8.48.1"
   },
   "devDependencies": {
-    "@types/react": "19.2.5",
+    "@types/react": "19.2.7",
     "jest": "30.2.0",
     "npm-run-all": "4.1.5",
-    "prettier": "3.6.2",
-    "prettier-plugin-tailwindcss": "0.7.1",
+    "prettier": "3.7.3",
+    "prettier-plugin-tailwindcss": "0.7.2",
     "react": "19.2.0",
     "release-it": "19.0.6",
     "typescript": "5.9.3"
