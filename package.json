@@ -2,85 +2,71 @@
   "$schema": "https://json.schemastore.org/package",
   "name": "@ivosabev/config",
   "version": "2.10.15",
-  "description": "Reusable ESLint, Prettier, TypeScript configs.",
+  "description": "Reusable Oxlint, Oxfmt, TypeScript configs.",
   "keywords": [
-    "javascript",
-    "typescript",
-    "ecmascript",
-    "eslint",
-    "lint",
     "config",
-    "prettier"
+    "ecmascript",
+    "formatter",
+    "javascript",
+    "lint",
+    "oxfmt",
+    "oxlint",
+    "typescript"
   ],
+  "homepage": "https://github.com/ivosabev/eslint-config-ivolution#readme",
+  "bugs": {
+    "url": "https://github.com/ivosabev/eslint-config-ivolution/issues"
+  },
+  "license": "MIT",
+  "author": "Ivo Sabev <ivolution@gmail.com> (http://ivosabev.com/)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivosabev/eslint-config-ivolution.git"
   },
-  "author": "Ivo Sabev <ivolution@gmail.com> (http://ivosabev.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ivosabev/eslint-config-ivolution/issues"
-  },
-  "homepage": "https://github.com/ivosabev/eslint-config-ivolution#readme",
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "main": "index.js",
   "type": "module",
+  "main": "index.js",
   "imports": {
     "#/*": "./*"
   },
   "exports": {
     ".": "./index.js",
-    "./eslint": "./eslint.js",
-    "./prettier": "./prettier.js",
+    "./oxfmt": "./.oxfmtrc.json",
+    "./oxlint": "./oxlint.json",
     "./typescript/base": "./typescript/base.json",
     "./typescript/build": "./typescript/build.json",
     "./typescript/dom": "./typescript/dom.json",
     "./typescript/node": "./typescript/node.json",
     "./typescript/reset.d.ts": "./typescript/reset.d.ts"
   },
+  "scripts": {
+    "format": "oxfmt",
+    "format-check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint-check": "oxlint",
+    "release": "pnpm run validate && release-it",
+    "typecheck": "tsc",
+    "validate": "run-p -l lint format typecheck",
+    "up": "pnpm update --interactive --latest"
+  },
   "dependencies": {
-    "@stylistic/eslint-plugin": "5.7.1",
     "@total-typescript/ts-reset": "0.6.1",
-    "@typescript-eslint/eslint-plugin": "8.54.0",
-    "@typescript-eslint/parser": "8.54.0",
-    "@vitest/eslint-plugin": "1.6.6",
-    "eslint": "9.39.2",
-    "eslint-import-resolver-node": "0.3.9",
-    "eslint-import-resolver-typescript": "4.4.4",
-    "eslint-plugin-import-x": "4.16.1",
-    "eslint-plugin-jest-dom": "5.5.0",
-    "eslint-plugin-jsonc": "2.21.0",
-    "eslint-plugin-newline-destructuring": "1.2.2",
     "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "7.0.1",
-    "eslint-plugin-sort-destructure-keys": "2.0.0",
-    "eslint-plugin-sort-keys-fix": "1.1.2",
-    "eslint-plugin-tailwindcss": "3.18.2",
-    "eslint-plugin-testing-library": "7.15.4",
-    "globals": "17.2.0",
-    "jsonc-eslint-parser": "2.4.2",
-    "ts-plugin-sort-import-suggestions": "1.0.4",
-    "typescript-eslint": "8.54.0"
+    "eslint-plugin-sort-destructure-keys": "3.0.0",
+    "oxfmt": "0.41.0",
+    "oxlint": "1.56.0",
+    "oxlint-tsgolint": "0.17.0",
+    "ts-plugin-sort-import-suggestions": "1.0.4"
   },
   "devDependencies": {
-    "@types/react": "19.2.10",
-    "jest": "30.2.0",
+    "@types/react": "19.2.14",
+    "jest": "30.3.0",
     "npm-run-all": "4.1.5",
-    "prettier": "3.8.1",
-    "prettier-plugin-tailwindcss": "0.7.2",
     "react": "19.2.4",
     "release-it": "19.2.4",
     "typescript": "5.9.3"
   },
-  "scripts": {
-    "lint-check": "eslint .",
-    "lint": "eslint .",
-    "release": "pnpm run validate && release-it",
-    "typecheck": "tsc",
-    "validate": "run-p -l lint typecheck",
-    "up": "pnpm update --interactive --latest"
+  "engines": {
+    "node": ">=20.19.0"
   },
   "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48"
 }

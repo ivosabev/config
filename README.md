@@ -1,7 +1,7 @@
 <div>
   <h1>@ivosabev/config</h1>
   <strong>
-    ESLint, Prettier, and TypeScript configs
+    Oxlint, Oxfmt, and TypeScript configs
   </strong>
   <p>
     This makes assumptions about the way you prefer to develop software and gives you configurations that will actually help you in your development.
@@ -26,32 +26,45 @@ pnpm add @ivosabev/config
 
 ## Usage
 
-### Prettier
+### Oxfmt (Formatter)
 
-The easiest way to use this config is in your `package.json`:
+Create an `.oxfmtrc.json` file in your project root that extends the shared config:
 
 ```json
-"prettier": "@ivosabev/config/prettier"
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 140,
+  "singleQuote": true,
+  "bracketSpacing": false
+}
 ```
+
+Or copy the config from `@ivosabev/config/oxfmt` and customize as needed.
 
 <details>
-  <summary>Customizing Prettier</summary>
+  <summary>Customizing Oxfmt</summary>
 
-If you want to customize things, you should probably just copy/paste the
-built-in config. But if you really want, you can override it using regular
-JavaScript stuff.
+Copy `node_modules/@ivosabev/config/oxfmt.json` to your project root as `.oxfmtrc.json` and modify it. See the [Oxfmt config reference](https://oxc.rs/docs/guide/usage/formatter/config-file-reference) for all available options.
 
-Create a `.prettierrc.js` file in your project root with the following content:
+</details>
 
-```js
-import defaultConfig from '@ivosabev/config/prettier';
+### Oxlint (Linter)
 
-/** @type {import("prettier").Options} */
-export default {
-  ...defaultConfig,
-  // .. your overrides here...
-};
+Create an `.oxlintrc.json` file in your project root:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["@ivosabev/config/oxlint"]
+}
 ```
+
+Or copy the config from `@ivosabev/config/oxlint` and customize as needed.
+
+<details>
+  <summary>Customizing Oxlint</summary>
+
+Copy `node_modules/@ivosabev/config/oxlint.json` to your project root as `.oxlintrc.json` and modify it. See the [Oxlint config reference](https://oxc.rs/docs/guide/usage/linter/config) for all available options.
 
 </details>
 
@@ -94,45 +107,26 @@ Learn more from
 
 </details>
 
-### ESLint
-
-Create a `eslint.config.js` file in your project root with the following
-content:
-
-```js
-import {config as defaultConfig} from '@ivosabev/config/eslint';
-
-/** @type {import("eslint").Linter.Config} */
-export default [...defaultConfig];
-```
-
-<details>
-  <summary>Customizing ESLint</summary>
-
-Learn more from
-[the Eslint docs here](https://eslint.org/docs/latest/extend/shareable-configs#overriding-settings-from-shareable-configs).
-
-</details>
-
-There are endless rules we could enable. However, we want to keep our
-configurations minimal and only enable rules that catch real problems (the kind
-that are likely to happen). This keeps our linting faster and reduces the number
-of false positives.
-
 ### package.json
 
 You may want to add the following scripts to your project:
 
 ```json
 {
-  "format-check": "prettier --check .",
-  "format": "prettier --write .",
-  "lint-check": "eslint .",
-  "lint": "eslint .",
+  "fmt": "oxfmt",
+  "fmt:check": "oxfmt --check",
+  "lint": "oxlint",
+  "lint-check": "oxlint",
   "typecheck": "tsc",
-  "validate": "run-p -l format lint typecheck"
+  "validate": "run-p -l lint fmt:check typecheck"
 }
 ```
+
+## Migration from ESLint/Prettier
+
+This package previously used ESLint and Prettier. It now uses [Oxlint](https://oxc.rs/docs/guide/usage/linter) and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) from the [Oxc](https://oxc.rs/) project.
+
+See `unsupported.md` for a list of rules and features that could not be directly migrated.
 
 ## Credits
 
@@ -140,6 +134,7 @@ You may want to add the following scripts to your project:
 - https://github.com/remix-run/remix/tree/main/packages/remix-eslint-config
 - https://github.com/total-typescript/tsconfig
 - https://github.com/mattpocock/ts-reset
+- https://oxc.rs
 
 ## License
 
