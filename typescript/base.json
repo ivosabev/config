@@ -28,7 +28,6 @@
     "allowArbitraryExtensions": false,
     "allowImportingTsExtensions": false,
     "allowUmdGlobalAccess": false,
-    "baseUrl": ".",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     // "moduleSuffixes"
