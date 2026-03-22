@@ -33,7 +33,7 @@
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "semi": true,
-  "singleAttributePerLine": false,
+  "singleAttributePerLine": true,
   "singleQuote": true,
   "sortImports": {
     "groups": ["builtin", "external", ["internal", "subpath"], ["parent", "sibling", "index"], "style", "unknown"],
