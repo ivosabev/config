@@ -16,7 +16,6 @@ export default defineConfig({
     '**/server-build/**',
     '**/dist/**',
   ],
-  jsPlugins: ['eslint-plugin-sort-destructure-keys', {name: 'react-js', specifier: 'eslint-plugin-react'}],
   options: {
     typeAware: true,
   },
@@ -76,23 +75,11 @@ export default defineConfig({
       },
     ],
     'no-warning-comments': ['error', {location: 'anywhere', terms: ['FIXME']}],
-    'react-js/jsx-sort-props': [
-      'error',
-      {
-        callbacksLast: false,
-        ignoreCase: true,
-        noSortAlphabetically: false,
-        reservedFirst: false,
-        shorthandFirst: false,
-        shorthandLast: false,
-      },
-    ],
     'react/exhaustive-deps': 'warn',
     'react/jsx-key': 'warn',
     'react/jsx-no-undef': 'error',
     'react/require-render-return': 'error',
     'react/rules-of-hooks': 'error',
-    'sort-destructure-keys/sort-destructure-keys': ['error', {caseSensitive: false}],
     'sort-keys': 'warn',
     'typescript/consistent-type-imports': [
       'warn',
