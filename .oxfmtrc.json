@@ -39,7 +39,7 @@
     "groups": ["builtin", "external", ["internal", "subpath"], ["parent", "sibling", "index"], "style", "unknown"],
     "ignoreCase": true,
     "internalPattern": ["#*/**", "~/**", "@/**"],
-    "newlinesBetween": true,
+    "newlinesBetween": false,
     "order": "asc"
   },
   "sortPackageJson": {
