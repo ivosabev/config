@@ -30,8 +30,8 @@
   },
   "exports": {
     ".": "./index.js",
-    "./oxfmt": "./oxfmt.config.ts",
-    "./oxlint": "./oxlint.config.ts",
+    "./oxfmt": "./.oxfmtrc.json",
+    "./oxlint": "./.oxlintrc.json",
     "./typescript/base": "./typescript/base.json",
     "./typescript/build": "./typescript/build.json",
     "./typescript/dom": "./typescript/dom.json",
