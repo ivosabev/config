@@ -51,7 +51,7 @@
   "dependencies": {
     "@total-typescript/ts-reset": "0.6.1",
     "oxfmt": "0.54.0",
-    "oxlint": "1.69.0",
+    "oxlint": "1.70.0",
     "oxlint-tsgolint": "0.23.0",
     "ts-plugin-sort-import-suggestions": "1.0.4"
   },
