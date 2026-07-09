@@ -5,7 +5,6 @@
     // Type Checking
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "alwaysStrict": true,
     "exactOptionalPropertyTypes": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -40,7 +39,8 @@
     // "rootDir"
     // "rootDirs"
     // "typeRoots"
-    // "types"
+    // Lock the TS7 default so consumers on older TS versions don't auto-load every @types/* package. Override per-project (e.g. ["node"]).
+    "types": [],
 
     // Emit
     // declaration
@@ -103,11 +103,11 @@
     // "jsxFragmentFactory"
     // "jsxImportSource"
     // "lib" - set in dom/no-dom configs ? or let client set them
-    "lib": ["ES2023"],
+    "lib": ["ES2024"],
     "moduleDetection": "auto",
     // "noLib"
     // "reactNamespace"
-    "target": "ES2023",
+    "target": "ES2024",
     "useDefineForClassFields": true,
 
     // Compiler Diagnostics
