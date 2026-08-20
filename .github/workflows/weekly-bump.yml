@@ -1,0 +1,64 @@
+name: Weekly bump
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - run: corepack enable
+      - run: pnpm install
+
+      - name: Bump latest dependencies
+        id: bump
+        run: node scripts/bump.mjs
+
+      - name: Validate
+        id: validate
+        continue-on-error: true
+        run: pnpm run validate 2>&1 | tee validate.log
+
+      - uses: aws-actions/configure-aws-credentials@v5
+        if: steps.bump.outputs.has_changes == 'true' || steps.validate.outcome == 'failure'
+        with:
+          role-to-assume: arn:aws:iam::332181766650:role/github-package-bump
+          aws-region: eu-central-1
+
+      - name: Store report on S3 and email
+        if: steps.bump.outputs.has_changes == 'true' || steps.validate.outcome == 'failure'
+        run: bash scripts/publish-bump-report.sh
+
+      - uses: peter-evans/create-pull-request@v7
+        if: steps.bump.outputs.has_changes == 'true' && steps.validate.outcome == 'success'
+        with:
+          title: Bump packages
+          commit-message: Bump packages.
+          branch: bump/weekly
+          delete-branch: true
+          add-paths: |
+            package.json
+            pnpm-workspace.yaml
+          body: |
+            Weekly dependency bump. Report was emailed and stored on S3.
+
+            Majors / breaking-range: `${{ steps.bump.outputs.has_majors }}`
+
+            Do not merge majors until the email report looks safe. This workflow does not publish.
