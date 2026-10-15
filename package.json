@@ -50,20 +50,20 @@
   },
   "dependencies": {
     "@total-typescript/ts-reset": "0.6.1",
-    "oxfmt": "0.72.0",
-    "oxlint": "1.87.0",
-    "oxlint-tsgolint": "7.0.2003",
+    "oxfmt": "0.73.0",
+    "oxlint": "1.88.0",
+    "oxlint-tsgolint": "7.0.2004",
     "ts-plugin-sort-import-suggestions": "1.0.4"
   },
   "devDependencies": {
     "@types/react": "19.3.0",
     "npm-run-all": "4.1.5",
     "react": "19.3.0",
-    "release-it": "21.1.0",
+    "release-it": "21.1.1",
     "typescript": "7.0.2"
   },
   "engines": {
     "node": ">=20.19.0"
   },
-  "packageManager": "pnpm@12.10.1+sha512.ba40a37eb1a370d60fea8c4cf1d364c13bcccef518e98ad2bcee954f539d38da37458e58261a3fa55e06523450ea0ffff9f497b135be41f2c15c1642bacace6c"
+  "packageManager": "pnpm@12.11.2+sha512.25a51652a196785af5f28bda6dfe8dc582ebefa4ac1d180221ce1390231c5fb76637822ea4b6e4633ce74acdcb0a77f725af11bad38177fdeddaee818a955cb9"
 }
