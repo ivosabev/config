@@ -14,6 +14,7 @@
     "**/dist/**"
   ],
   "options": {
+    "reportUnusedDisableDirectives": "warn",
     "typeAware": true
   },
   "overrides": [
@@ -73,6 +74,7 @@
     "react/immutability": "error",
     "react/incompatible-library": "error",
     "react/jsx-key": "error",
+    "react/jsx-no-target-blank": "warn",
     "react/jsx-no-undef": "error",
     "react/preserve-manual-memoization": "error",
     "react/purity": "error",
@@ -96,8 +98,10 @@
     ],
     "typescript/no-floating-promises": "off",
     "typescript/no-misused-promises": ["error", {"checksVoidReturn": false}],
+    "typescript/no-unnecessary-type-assertion": "warn",
     "typescript/return-await": ["error", "in-try-catch"],
     "typescript/switch-exhaustiveness-check": "off",
+    "unicorn/prefer-node-protocol": "warn",
     "vitest/no-focused-tests": "error"
   }
 }
