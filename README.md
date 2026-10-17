@@ -28,45 +28,46 @@ pnpm add @ivosabev/config
 
 ### Oxfmt (Formatter)
 
-Create an `.oxfmtrc.json` file in your project root that extends the shared config:
+Oxfmt has no `extends`. Copy the shared file and change what you need:
 
-```json
-{
-  "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "printWidth": 140,
-  "singleQuote": true,
-  "bracketSpacing": false
-}
+```sh
+cp node_modules/@ivosabev/config/.oxfmtrc.json .oxfmtrc.json
 ```
 
-Or copy the config from `@ivosabev/config/oxfmt` and customize as needed.
+In a monorepo, copy from the workspace's `node_modules/@ivosabev/config/.oxfmtrc.json`. See the [Oxfmt config reference](https://oxc.rs/docs/guide/usage/formatter/config-file-reference).
 
-<details>
-  <summary>Customizing Oxfmt</summary>
-
-Copy `node_modules/@ivosabev/config/oxfmt.json` to your project root as `.oxfmtrc.json` and modify it. See the [Oxfmt config reference](https://oxc.rs/docs/guide/usage/formatter/config-file-reference) for all available options.
-
-</details>
+`sortImports.internalPattern` is a list of prefixes. `#`, `~/`, and `@/` mark `#app/foo`, `~/foo`, and `@/foo` as internal. `@ivosabev/foo` stays external.
 
 ### Oxlint (Linter)
 
-Create an `.oxlintrc.json` file in your project root:
+Create an `.oxlintrc.json` in the project root. The path has to be a real file. Oxlint does not resolve the package name `@ivosabev/config/oxlint`.
 
 ```json
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["@ivosabev/config/oxlint"]
+  "extends": ["./node_modules/@ivosabev/config/.oxlintrc.json"]
 }
 ```
 
-Or copy the config from `@ivosabev/config/oxlint` and customize as needed.
+A child `ignorePatterns` list replaces the shared one. Repeat the shared patterns, then add yours:
 
-<details>
-  <summary>Customizing Oxlint</summary>
+```json
+{
+  "extends": ["./node_modules/@ivosabev/config/.oxlintrc.json"],
+  "ignorePatterns": [
+    "**/.cache/**",
+    "**/node_modules/**",
+    "**/build/**",
+    "**/public/build/**",
+    "**/playwright-report/**",
+    "**/server-build/**",
+    "**/dist/**",
+    "**/coverage/**"
+  ]
+}
+```
 
-Copy `node_modules/@ivosabev/config/oxlint.json` to your project root as `.oxlintrc.json` and modify it. See the [Oxlint config reference](https://oxc.rs/docs/guide/usage/linter/config) for all available options.
-
-</details>
+See the [Oxlint config reference](https://oxc.rs/docs/guide/usage/linter/config).
 
 ### TypeScript
 
@@ -74,8 +75,8 @@ Create a `tsconfig.json` file in your project root with the following content:
 
 ```json
 {
-  "extends": "@ivosabev/config/typescript",
-  "include": ["@ivosabev/config/reset.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "extends": "@ivosabev/config/typescript/base",
+  "include": ["@ivosabev/config/typescript/reset.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   "compilerOptions": {
     "paths": {
       "#app/*": ["./app/*"],
@@ -90,7 +91,7 @@ If you want to build with `tsc` create a `tsconfig.build.json` file in your proj
 ```json
 {
   "extends": "@ivosabev/config/typescript/build",
-  "include": ["@ivosabev/config/reset.d.ts", "src", "tailwind.config.ts"],
+  "include": ["@ivosabev/config/typescript/reset.d.ts", "src", "tailwind.config.ts"],
   "compilerOptions": {
     "declarationDir": "dist/dts",
     "outDir": "dist/esm",
@@ -113,12 +114,11 @@ You may want to add the following scripts to your project:
 
 ```json
 {
-  "fmt": "oxfmt",
-  "fmt:check": "oxfmt --check",
+  "format": "oxfmt",
+  "format-check": "oxfmt --check",
   "lint": "oxlint",
-  "lint-check": "oxlint",
   "typecheck": "tsc",
-  "validate": "run-p -l lint fmt:check typecheck"
+  "validate": "run-p -l lint format-check typecheck"
 }
 ```
 
