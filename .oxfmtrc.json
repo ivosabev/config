@@ -38,7 +38,7 @@
   "sortImports": {
     "groups": ["builtin", "external", ["internal", "subpath"], ["parent", "sibling", "index"], "style", "unknown"],
     "ignoreCase": true,
-    "internalPattern": ["#*/**", "~/**", "@/**"],
+    "internalPattern": ["#", "~/", "@/"],
     "newlinesBetween": false,
     "order": "asc"
   },
