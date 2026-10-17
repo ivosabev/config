@@ -107,14 +107,14 @@ You may want to add the following scripts to your project:
 {
   "format": "oxfmt",
   "format-check": "oxfmt --check",
-  "lint": "oxlint",
-  "lint-fix": "oxlint --fix",
+  "lint": "oxlint --fix",
+  "lint-check": "oxlint",
   "typecheck": "tsc",
-  "validate": "run-p -l lint format-check typecheck"
+  "validate": "run-p lint format typecheck"
 }
 ```
 
-`oxfmt` does not sort object keys. `sort-keys` is an error, and `oxlint --fix` sorts them.
+`oxfmt` does not sort object keys. `sort-keys` is an error, and `lint` sorts them.
 
 ## Migration from ESLint/Prettier
 
