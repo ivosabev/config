@@ -64,13 +64,13 @@
       }
     ],
     "no-use-before-define": ["error", {"functions": false}],
-    "no-warning-comments": ["error", {"location": "anywhere", "terms": ["FIXME"]}],
+    "no-warning-comments": ["error", {"location": "start", "terms": ["FIXME"]}],
     "react/error-boundaries": "error",
     "react/exhaustive-deps": "warn",
     "react/globals": "error",
     "react/immutability": "error",
     "react/incompatible-library": "error",
-    "react/jsx-key": "warn",
+    "react/jsx-key": "error",
     "react/jsx-no-undef": "error",
     "react/preserve-manual-memoization": "error",
     "react/purity": "error",
@@ -83,7 +83,7 @@
     "react/unsupported-syntax": "error",
     "react/use-memo": "error",
     "react/void-use-memo": "error",
-    "sort-keys": "warn",
+    "sort-keys": "error",
     "typescript/consistent-type-imports": [
       "warn",
       {
@@ -94,6 +94,6 @@
     ],
     "typescript/no-misused-promises": ["error", {"checksVoidReturn": false}],
     "typescript/return-await": ["error", "in-try-catch"],
-    "vitest/no-focused-tests": "warn"
+    "vitest/no-focused-tests": "error"
   }
 }

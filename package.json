@@ -43,6 +43,7 @@
     "format-check": "oxfmt --check",
     "lint": "oxlint",
     "lint-check": "oxlint",
+    "lint-fix": "oxlint --fix",
     "release": "pnpm run validate && release-it",
     "typecheck": "tsc",
     "validate": "run-p -l lint format typecheck",
