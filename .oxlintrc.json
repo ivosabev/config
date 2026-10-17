@@ -37,6 +37,7 @@
   ],
   "plugins": ["import", "oxc", "react", "typescript", "unicorn", "vitest"],
   "rules": {
+    "eqeqeq": ["error", "smart"],
     "curly": ["error", "all"],
     "import/consistent-type-specifier-style": ["warn", "prefer-inline"],
     "import/no-duplicates": ["warn", {"preferInline": true}],
