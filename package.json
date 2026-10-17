@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/package",
   "name": "@ivosabev/config",
   "version": "5.0.13",
   "description": "Reusable Oxlint, Oxfmt, TypeScript configs.",
