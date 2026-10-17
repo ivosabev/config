@@ -41,6 +41,7 @@
     "curly": ["error", "all"],
     "import/consistent-type-specifier-style": ["warn", "prefer-inline"],
     "import/no-duplicates": ["warn", {"preferInline": true}],
+    "import/no-self-import": "error",
     "no-func-assign": "error",
     "no-global-assign": "error",
     "no-unexpected-multiline": "error",
