@@ -28,46 +28,37 @@ pnpm add @ivosabev/config
 
 ### Oxfmt (Formatter)
 
-Oxfmt has no `extends`. Copy the shared file and change what you need:
+Oxfmt ignores `extends`. Spread the shared config in `oxfmt.config.ts` and override what you need. Do not also keep `.oxfmtrc.json` in the same directory.
 
-```sh
-cp node_modules/@ivosabev/config/.oxfmtrc.json .oxfmtrc.json
+```ts
+import config from '@ivosabev/config/oxfmt' with {type: 'json'};
+import {type OxfmtConfig, defineConfig} from 'oxfmt';
+
+export default defineConfig({
+  ...(config as OxfmtConfig),
+  ignorePatterns: [...config.ignorePatterns, '**/coverage/**'],
+});
 ```
 
-In a monorepo, copy from the workspace's `node_modules/@ivosabev/config/.oxfmtrc.json`. See the [Oxfmt config reference](https://oxc.rs/docs/guide/usage/formatter/config-file-reference).
+A later `ignorePatterns` list replaces the shared one. Spread `config.ignorePatterns`, then add yours. See the [Oxfmt config reference](https://oxc.rs/docs/guide/usage/formatter/config-file-reference).
 
 `sortImports.internalPattern` is a list of prefixes. `#`, `~/`, and `@/` mark `#app/foo`, `~/foo`, and `@/foo` as internal. `@ivosabev/foo` stays external.
 
 ### Oxlint (Linter)
 
-Create an `.oxlintrc.json` in the project root. The path has to be a real file. Oxlint does not resolve the package name `@ivosabev/config/oxlint`.
+Create `oxlint.config.ts` in the project root. Import the shared config and pass it to `extends`. A string path to the package name does not work.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["./node_modules/@ivosabev/config/.oxlintrc.json"]
-}
+```ts
+import config from '@ivosabev/config/oxlint' with {type: 'json'};
+import {type OxlintConfig, defineConfig} from 'oxlint';
+
+export default defineConfig({
+  extends: [config as unknown as OxlintConfig],
+  ignorePatterns: [...config.ignorePatterns, '**/coverage/**'],
+});
 ```
 
-A child `ignorePatterns` list replaces the shared one. Repeat the shared patterns, then add yours:
-
-```json
-{
-  "extends": ["./node_modules/@ivosabev/config/.oxlintrc.json"],
-  "ignorePatterns": [
-    "**/.cache/**",
-    "**/node_modules/**",
-    "**/build/**",
-    "**/public/build/**",
-    "**/playwright-report/**",
-    "**/server-build/**",
-    "**/dist/**",
-    "**/coverage/**"
-  ]
-}
-```
-
-See the [Oxlint config reference](https://oxc.rs/docs/guide/usage/linter/config).
+A child `ignorePatterns` list replaces the shared one. Spread `config.ignorePatterns`, then add yours. Do not also keep `.oxlintrc.json` in the same directory. See the [Oxlint config reference](https://oxc.rs/docs/guide/usage/linter/config).
 
 ### TypeScript
 
