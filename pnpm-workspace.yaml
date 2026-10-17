@@ -1,5 +1,4 @@
-minimumReleaseAgeExclude:
-  - '@ivosabev/*'
+minimumReleaseAge: 0
 onlyBuiltDependencies:
   - esbuild
   - unrs-resolver
