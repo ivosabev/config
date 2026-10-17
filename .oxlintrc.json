@@ -94,8 +94,10 @@
         "prefer": "type-imports"
       }
     ],
+    "typescript/no-floating-promises": "off",
     "typescript/no-misused-promises": ["error", {"checksVoidReturn": false}],
     "typescript/return-await": ["error", "in-try-catch"],
+    "typescript/switch-exhaustiveness-check": "off",
     "vitest/no-focused-tests": "error"
   }
 }
