@@ -1,6 +1,6 @@
 {
   "name": "@ivosabev/config",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "Reusable Oxlint, Oxfmt, TypeScript configs.",
   "keywords": [
     "config",
